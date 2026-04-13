@@ -1,7 +1,5 @@
 let people=4;
-
 let totalamount=2000;
- 
 let perPersonbill = totalamount/people ;
 
 document.writeln("Total Amount: "+totalamount+"<br>");
