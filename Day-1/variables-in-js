@@ -1,5 +1,5 @@
 # 🧠 What is a Variable in JavaScript?
-A **variable** is a container that stores data.
+A variable is a container that stores data.
 
 Example:
 let age = 25;
