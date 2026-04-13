@@ -26,9 +26,8 @@ Document
 
 This structure = DOM
 
-🧠 Simple definition
-
-👉 DOM = HTML page as JavaScript objects
+## Simple definition
+  DOM = HTML page as JavaScript objects
 
 So JS can:
 
