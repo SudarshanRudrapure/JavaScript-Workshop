@@ -1,0 +1,214 @@
+# 🧠 What is a Variable in JavaScript?
+A **variable** is a container that stores data.
+
+Example:
+let age = 25;
+
+Meaning:
+Variable name → age
+Value stored → 25
+So:
+👉 Variable = named storage location in memory
+
+
+
+# 📦 Why Variables Are Needed
+
+Programs need to store:
+* Numbers
+* Names
+* User input
+* Results
+* Objects
+* Arrays
+
+Example:
+
+let name = "Sdr";
+let marks = 90;
+
+Without variables, programs cannot remember data.
+
+---
+
+# 🧾 How to Declare Variables in JavaScript
+
+JavaScript has **3 ways**:
+var
+let
+const
+
+---
+
+# 1️⃣ let (Most Used)
+
+Modern variable (ES6)
+let age = 25;
+
+✔ Can change value
+✔ Block scope
+✔ Recommended
+
+Example:
+let score = 10;
+score = 20;
+
+console.log(score); // 20
+---
+
+# 2️⃣ const (Constant)
+
+Value cannot change.
+const pi = 3.14;
+
+❌ Cannot reassign
+✔ Block scope
+
+Example:
+const country = "India";
+// country = "USA"; ❌ error
+
+# 3️⃣ var (Old JavaScript)
+
+Old way (before ES6)
+var name = "Sudir";
+Problems:
+* Function scope
+* Can redeclare
+* Hoisting issues
+So avoid in modern JS.
+
+# 🧩 Variable Syntax
+
+General form:
+keyword variableName = value;
+
+Example:
+
+let city = "Mumbai";
+const year = 2025;
+var price = 100;
+
+# 🧠 Memory Concept (Important)
+
+When you write:
+let age = 25;
+
+Engine does:
+1. Create memory box named age
+2. Store value 25
+So:
+age → 25
+
+# ✏️ Variable Naming Rules
+
+Allowed:
+let name;
+let _name;
+let $price;
+let user1;
+
+Not allowed:
+let 1name; ❌
+let user-name; ❌
+let var; ❌ keyword
+
+# ⭐ Naming Best Practices
+
+Use meaningful names:
+let userAge = 25;
+let totalPrice = 1000;
+let isLoggedIn = true;
+
+# 🔄 Reassigning Variables
+
+let can change:
+
+let score = 10;
+score = 50;
+
+const cannot:
+const pi = 3.14;
+pi = 4; ❌
+
+# 🧩 Declared vs Initialized
+
+Declared:
+let x;
+
+Initialized:
+let x = 10;
+
+# 🔎 Multiple Variables
+let a = 1, b = 2, c = 3;
+
+# 🧠 Variable Types (Values Stored)
+
+Variables can store:
+
+Number:
+let age = 25;
+
+String:
+let name = "Sudir";
+
+Boolean:
+let isActive = true;
+
+Array:
+let nums = [1,2,3];
+
+Object:
+let user = {name:"Sudir"};
+
+# ⚖️ let vs const vs var (Important)
+
+Difference:
+
+let:
+
+* changeable
+* block scope
+* modern
+
+const:
+
+* not changeable
+* block scope
+* modern
+
+var:
+
+* changeable
+* function scope
+* old
+
+# 🧠 Block Scope Example
+
+{
+  let a = 10;
+  const b = 20;
+  var c = 30;
+}
+
+console.log(c); // 30
+console.log(a); // error
+console.log(b); // error
+```
+
+Because:
+
+let & const → block scope
+var → function/global scope
+
+# 🚀 Real Example
+
+let userName = "Rahul";
+let age = 22;
+let isLoggedIn = true;
+
+console.log(userName);
+
+# ✅ Final Definition
+
+**Variable = named container used to store data in JavaScript.**

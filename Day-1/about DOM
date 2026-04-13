@@ -1,0 +1,53 @@
+🌳 What is DOM?
+
+DOM = Document Object Model
+
+It means:
+👉 The browser converts your HTML page into a tree of objects
+👉 JavaScript can read and change that tree
+
+Example HTML
+<!DOCTYPE html>
+<html>
+<body>
+  <h1 id="title">Hello</h1>
+  <p>Welcome</p>
+</body>
+</html>
+
+
+Browser converts it into structure like:
+
+Document
+ └── html
+      └── body
+           ├── h1
+           └── p
+
+This structure = DOM
+
+🧠 Simple definition
+
+👉 DOM = HTML page as JavaScript objects
+
+So JS can:
+
+✔ change text
+✔ change color
+✔ hide/show elements
+✔ add/remove elements
+
+🎯 Why DOM is needed
+
+Without DOM → JS cannot touch HTML
+
+With DOM → JS controls webpage
+
+Example:
+document.getElementById("title").innerText = "Hi Sudarshan";
+Page changes instantly ✅
+
+🔑 Main DOM object
+Everything starts from:
+document
+It represents whole webpage.

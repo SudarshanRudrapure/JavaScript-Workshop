@@ -1,0 +1,403 @@
+# 🌐 Part 1 — How JavaScript Runs in Browser
+
+When you open a website, this happens internally:
+
+1. Browser loads HTML
+2. Browser loads CSS
+3. Browser finds <script>
+4. JS Engine executes JS
+5. Page becomes interactive
+
+## 🔎 Inside the Browser — Real Execution Flow
+
+Browser has:
+
+* Rendering Engine → shows page
+* JavaScript Engine → runs JS
+* Web APIs → timers, DOM, events
+
+Example code:
+html
+<button id="btn">Click</button>
+
+<script>
+document.getElementById("btn").onclick = function() {
+  alert("Hello");
+}
+</script>
+
+Execution:
+Browser reads HTML
+↓
+Creates DOM tree
+↓
+Finds <script>
+↓
+JS engine runs code
+↓
+Event listener attached
+↓
+User clicks
+↓
+Function runs
+↓
+Alert shown
+
+# ⚙️ JavaScript Engine Internals (Important)
+
+JS engine runs code in 2 phases:
+
+## 1️⃣ Parsing
+
+Engine reads code → checks syntax
+Example:
+let x = 5;
+Converted to internal structure.
+
+## 2️⃣ Compilation + Execution
+Modern engines (V8) convert JS → machine code → execute.
+
+So:
+JS → Bytecode → Machine code → CPU runs
+
+---
+
+# 🧵 Execution Context (How JS Tracks Code)
+
+When JS runs, engine creates:
+
+👉 Execution Context = environment to run code
+
+Contains:
+
+* Variables
+* Functions
+* Scope
+* this value
+
+Example:
+javascript code
+
+let a = 10;
+function test() {
+  let b = 20;
+}
+
+Execution order:
+
+Global Context created
+↓
+a stored
+↓
+test stored
+↓
+test() called
+↓
+Function context created
+↓
+b stored
+↓
+Function ends
+
+---
+
+# 🧭 Call Stack (How Functions Run)
+
+JavaScript uses stack:
+Last In → First Out
+Example:
+javascript code:
+function one() {
+  two();
+}
+function two() {
+  console.log("Hello");
+}
+
+one();
+
+Stack flow:
+
+Global
+↓
+one()
+↓
+two()
+↓
+console.log
+↓
+two ends
+↓
+one ends
+---
+
+# ⏱️ Event Loop (Why JS Handles Clicks & Timers)
+
+JavaScript is **single-threaded** (one task at time).
+
+But it handles:
+
+* Clicks
+* Timers
+* Network
+* Animations
+
+Using:
+
+👉 Event Loop
+👉 Callback Queue
+👉 Web APIs
+
+Example:
+
+javascript code
+setTimeout(() => {
+  console.log("Hi");
+}, 2000);
+
+console.log("Start");
+
+Output:
+Start
+Hi (after 2 sec)
+
+Why?
+setTimeout → Web API
+↓
+Timer finished → Queue
+↓
+Stack empty → Event loop pushes
+↓
+Callback runs
+
+
+# 🖥️ Part 2 — How JavaScript Runs in Backend (Node.js)
+
+Now the main question you asked 👍
+
+JavaScript normally runs in browser.
+But backend needs:
+
+* File system
+* Database
+* Network
+* Server
+
+Browsers don’t allow this.
+
+So Node.js was created.
+
+---
+
+# 🧩 What is Node.js?
+
+Node.js = JavaScript runtime outside browser
+
+It includes:
+
+* V8 engine (same as Chrome)
+* OS access
+* File system
+* Networking
+* HTTP server
+
+So JS can run on computer/server.
+
+---
+
+# ⚙️ How Node.js Runs JavaScript
+
+When you run:
+
+node app.js
+
+This happens:
+
+1. Node starts
+2. Loads V8 engine
+3. Reads app.js
+4. Parses JS
+5. Compiles
+6. Executes
+
+Exactly like browser — but without DOM.
+
+# 🔎 Example Backend Program
+
+app.js:
+
+```javascript
+console.log("Server started");
+```
+
+Run:
+node app.js
+```
+
+Output:
+
+Server started
+
+JS ran outside browser ✅
+
+# 🌐 Backend Server Example (Important)
+
+```javascript
+const http = require("http");
+
+const server = http.createServer((req, res) => {
+  res.write("Hello from server");
+  res.end();
+});
+
+server.listen(3000);
+```
+
+Execution flow:
+
+node app.js
+↓
+Node loads http module
+↓
+Creates server
+↓
+Listens on port 3000
+↓
+Browser requests localhost:3000
+↓
+Callback runs
+↓
+Response sent
+```
+
+---
+
+# 📦 Node.js Architecture (Important)
+
+Node has:
+
+* V8 engine
+* Event loop
+* Libuv (async I/O)
+* OS bindings
+
+So Node handles many users efficiently.
+
+---
+
+# 🧵 Backend Event Loop
+
+Same concept as browser.
+
+Example:
+
+```javascript
+const fs = require("fs");
+
+fs.readFile("data.txt", () => {
+  console.log("File read");
+});
+
+console.log("Start");
+```
+
+Output:
+
+```
+Start
+File read
+```
+
+Why?
+
+```
+readFile → OS
+↓
+Node continues
+↓
+Callback queued
+↓
+Event loop runs
+```
+
+---
+
+# 🔥 How Backend JS Handles Requests
+
+Server flow:
+
+```
+Client request
+↓
+Node receives
+↓
+Event loop assigns callback
+↓
+Handler runs
+↓
+Response sent
+```
+
+One thread can handle thousands users.
+
+---
+
+# ⚖️ Browser JS vs Node JS
+
+Difference:
+
+Browser:
+
+* Has DOM
+* Has window
+* UI events
+
+Node:
+
+* No DOM
+* Has file system
+* Has server APIs
+
+Example:
+
+Browser only:
+
+```javascript
+document.getElementById()
+```
+
+Node only:
+
+```javascript
+require("fs")
+```
+
+---
+
+# 🧠 Complete Mental Model
+
+Now you can visualize:
+
+Frontend:
+
+```
+User click
+↓
+Browser JS
+↓
+UI update
+```
+
+Backend:
+
+```
+User request
+↓
+Node JS
+↓
+Database
+↓
+Response
+```
+
+---
