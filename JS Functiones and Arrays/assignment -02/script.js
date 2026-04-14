@@ -4,5 +4,6 @@ let todos=["Learn JS", "Do Assignment", "Take Break"]
 function fun(todos){
     todos.forEach((item)=> console.log(item));
 }
+
 fun(todos);
 

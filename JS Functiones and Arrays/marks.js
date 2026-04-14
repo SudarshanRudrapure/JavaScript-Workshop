@@ -11,4 +11,5 @@ function calculateTotal(){
     let total = student.math + student.science + student.english + student.history + student.geography;
     console.log(total)
 }
+
 calculateTotal();
