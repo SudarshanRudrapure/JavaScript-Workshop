@@ -1,0 +1,23 @@
+## ARRAYS
+let person1 = "Abhishek"
+let person2 = "Ananya"
+let person3 = "Dhana"
+let person4 = "Krishna"
+let person5 = "Naveen" 
+ 
+if you want to  store data -> then not like this
+same kind of data to store is in better way
+
+create array -> store all thenames -> instead of creating multiple data inside single container
+
+create array we need square brackets [] like this
+
+variable called  person
+
+let person = ["Abhishek", "Ananya", "Dhana", "Krishna", "Naveen" ]
+
+console.log(person1)
+console.log(person2)
+
+arrays will be used when less context required
+object will be used when more context required
