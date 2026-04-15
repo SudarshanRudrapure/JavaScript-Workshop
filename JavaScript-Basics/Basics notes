@@ -23,21 +23,18 @@ JavaScript makes websites **interactive and smart**.
 👉 Example:
 
 Without JS:
-    ```
+
     Click button → Nothing happens
-    ```
+   
 
 With JS:
-    ```
+    
     Click button → Message appears
-    ```
 
 So:
-👉 **HTML = Structure** (skeleton)
-👉 **CSS = Style** (beauty)
-👉 **JavaScript = Brain** (logic & behavior)
-
----
+**HTML = Structure** (skeleton)
+**CSS = Style** (beauty)
+**JavaScript = Brain** (logic & behavior)
 
 # 🧠 What is JavaScript?
 JavaScript is a **programming language** used to give instructions to the browser.
