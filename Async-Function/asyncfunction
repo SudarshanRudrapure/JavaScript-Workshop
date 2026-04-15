@@ -1,9 +1,8 @@
-
+## Async Functions (asynchronous functions)
 Basic Syntax
 async function functionName() {
   // asynchronous code
 }
-
 
 or arrow function:
 
@@ -11,13 +10,22 @@ const functionName = async () => {
   // async code
 };
 
-
 Key Points
 
-async → makes a function return a Promise
+async → makes a function return a Promise 
+  ## A Promise is exactly what it sounds like: a placeholder for a value that you don't have yet but will receive in the future.
 await → pauses execution until Promise resolves
 Makes async code look like normal step-by-step code
 
+## When you put the word async before a function, you are turning it into an Asynchronous Function.
+
+async function myFunc() {
+  return "Hello!";
+}
+    // Even though we returned a string, 
+    // JavaScript automatically wraps it in a Promise.
+console.log(myFunc()); 
+        // Output: Promise { 'Hello!' }
 
 Simple async function
 
