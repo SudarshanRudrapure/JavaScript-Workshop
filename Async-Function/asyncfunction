@@ -1,0 +1,52 @@
+
+Basic Syntax
+async function functionName() {
+  // asynchronous code
+}
+
+
+or arrow function:
+
+const functionName = async () => {
+  // async code
+};
+
+
+Key Points
+
+async → makes a function return a Promise
+await → pauses execution until Promise resolves
+Makes async code look like normal step-by-step code
+
+
+Simple async function
+
+async function greet() {
+  return "Hello";
+}
+greet().then((msg) => console.log(msg));
+
+
+
+example2: 
+function waitTwoSeconds() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("Done after 2 seconds");
+    }, 2000);
+  });
+}
+
+async function run() {
+  let result = await waitTwoSeconds();
+  console.log(result);
+}
+run();
+
+👉 Flow:
+run() starts
+await pauses
+2 seconds later Promise resolves
+prints result
+
+👉 An async function is a function that returns a Promise and allows writing asynchronous code using await in a synchronous style.
