@@ -19,6 +19,7 @@ async function askAI() {
       );
 
       let data = await response.json();
+      
       let result = data.candidates[0].content.parts[0].text;
 
       document.getElementById("answer").innerText = result;
