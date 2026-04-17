@@ -37,7 +37,6 @@ function clearChat() {
       <h2>What do you want to know?</h2>
       <p>Ask me anything — I'll do my best to help.</p>
       <div class="chips">
-        <button class="chip" onclick="useChip(this)">What is quantum computing?</button>
         <button class="chip" onclick="useChip(this)">Explain recursion with an example</button>
         <button class="chip" onclick="useChip(this)">List all planets in our solar system</button>
         <button class="chip" onclick="useChip(this)">Write a Python function to reverse a string</button>
