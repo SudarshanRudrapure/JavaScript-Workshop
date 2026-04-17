@@ -1,20 +1,20 @@
 // API key is in config.js — safe to push to GitHub!
 
-// ── Conversation history (multi-turn memory)
+//  Conversation history (multi-turn memory)
 let history = [];
 
-// ── DOM Elements
+//  DOM Elements
 const chatBox   = document.getElementById('chat-box');
 const userInput = document.getElementById('user-input');
 const sendBtn   = document.getElementById('send-btn');
 
-// ── Auto-grow textarea
+//  Auto-grow textarea
 userInput.addEventListener('input', () => {
   userInput.style.height = 'auto';
   userInput.style.height = Math.min(userInput.scrollHeight, 140) + 'px';
 });
 
-// ── Enter = send, Shift+Enter = new line
+//  Enter = send, Shift+Enter = new line
 userInput.addEventListener('keydown', (e) => {
   if (e.key === 'Enter' && !e.shiftKey) {
     e.preventDefault();
@@ -22,13 +22,13 @@ userInput.addEventListener('keydown', (e) => {
   }
 });
 
-// ── Use a suggestion chip
+//  Use a suggestion chip
 function useChip(el) {
   userInput.value = el.textContent;
   askAI();
 }
 
-// ── Clear the chat
+//  Clear the chat
 function clearChat() {
   history = [];
   chatBox.innerHTML = `
@@ -45,7 +45,7 @@ function clearChat() {
     </div>`;
 }
 
-// ── Add a message bubble to the chat
+//  Add a message bubble to the chat
 function addMessage(role, htmlContent) {
   document.getElementById('empty-state')?.remove();
 
@@ -78,7 +78,7 @@ function addMessage(role, htmlContent) {
   chatBox.scrollTop = chatBox.scrollHeight;
 }
 
-// ── Show typing indicator
+//  Show typing indicator
 function showTyping() {
   document.getElementById('empty-state')?.remove();
 
@@ -100,7 +100,7 @@ function showTyping() {
   chatBox.scrollTop = chatBox.scrollHeight;
 }
 
-// ── Convert Markdown → HTML
+// Convert Markdown → HTML
 function mdToHtml(text) {
   const escape = (s) => s
     .replace(/&/g, '&amp;')
@@ -146,9 +146,8 @@ function mdToHtml(text) {
   return text;
 }
 
-// ══════════════════════════════════════════
 //  MAIN: Call Groq API
-// ══════════════════════════════════════════
+
 async function askAI() {
   const query = userInput.value.trim();
   if (!query) return;
