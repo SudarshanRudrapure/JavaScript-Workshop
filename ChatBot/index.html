@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ask AI</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-wrapper">
+
+    <header class="header">
+      <div class="logo">
+        <div class="logo-icon">✦</div>
+        Ask AI
+      </div>
+      <button class="clear-btn" onclick="clearChat()">Clear chat</button>
+    </header>
+
+    <main class="chat-area" id="chat-box">
+      <div class="empty-state" id="empty-state">
+        <div class="empty-icon">✦</div>
+        <h2>What do you want to know?</h2>
+        <p>Ask me anything — I'll do my best to help.</p>
+        <div class="chips">
+          <button class="chip" onclick="useChip(this)">What is quantum computing?</button>
+          <button class="chip" onclick="useChip(this)">Explain recursion with an example</button>
+          <button class="chip" onclick="useChip(this)">List all planets in our solar system</button>
+          <button class="chip" onclick="useChip(this)">Write a Python function to reverse a string</button>
+        </div>
+      </div>
+    </main>
+
+    <footer class="input-area">
+      <div class="input-box">
+        <textarea id="user-input" placeholder="Ask anything..." rows="1"></textarea>
+        <button id="send-btn" onclick="askAI()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+        </button>
+      </div>
+      <p class="hint">Enter to send &nbsp;·&nbsp; Shift + Enter for new line</p>
+    </footer>
+
+  </div>
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
