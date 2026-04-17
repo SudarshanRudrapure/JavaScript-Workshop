@@ -1,4 +1,4 @@
-// ✅ API key is in config.js — safe to push to GitHub!
+// API key is in config.js — safe to push to GitHub!
 
 // ── Conversation history (multi-turn memory)
 let history = [];
